@@ -3,6 +3,7 @@ package com.hmdp.interceptor;
 import com.hmdp.dto.UserDTO;
 import com.hmdp.entity.User;
 import com.hmdp.utils.UserHolder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
@@ -18,6 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         User user = (User) session.getAttribute("user");
         if (user == null) {
             response.setStatus(401);
+            log.info("未登录");
             return false;
         }
 
