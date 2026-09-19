@@ -4,12 +4,8 @@ import com.hmdp.entity.VoucherOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- *  服务类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 定义优惠券订单相关业务服务接口。
+ * @author wdk
  */
 public interface IVoucherOrderService extends IService<VoucherOrder> {
 

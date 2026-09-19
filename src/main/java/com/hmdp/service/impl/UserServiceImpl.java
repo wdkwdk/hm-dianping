@@ -26,12 +26,8 @@ import static com.hmdp.utils.RedisConstants.*;
 import static com.hmdp.utils.SystemConstants.USER_NICK_NAME_PREFIX;
 
 /**
- * <p>
- * 服务实现类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 实现用户相关业务服务。
+ * @author wdk
  */
 @Service
 @Slf4j
@@ -40,6 +36,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
+    /**
+     * 生成并发送手机验证码，同时保存验证码状态。
+     */
     @Override
     public Result sendCode(String phone, HttpSession session) {
         if (RegexUtils.isPhoneInvalid(phone)) {
@@ -54,6 +53,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return Result.ok();
     }
 
+    /**
+     * 校验登录信息并建立用户登录状态。
+     */
     @Override
     public Result login(LoginFormDTO loginForm, HttpSession session) {
         String phone = loginForm.getPhone();
@@ -82,6 +84,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return Result.ok(token);
     }
 
+    /**
+     * 根据手机号创建并保存新用户。
+     */
     private User createUserWithPhone(String phone) {
         User user = new User();
         user.setPhone(phone);

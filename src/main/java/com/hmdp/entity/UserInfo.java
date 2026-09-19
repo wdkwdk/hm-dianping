@@ -12,12 +12,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * <p>
- * 
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-24
+ * 定义用户扩展信息实体及其持久化字段。
+ * @author wdk
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

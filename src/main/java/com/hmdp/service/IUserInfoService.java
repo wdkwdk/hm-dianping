@@ -4,12 +4,8 @@ import com.hmdp.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- *  服务类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-24
+ * 定义用户扩展信息相关业务服务接口。
+ * @author wdk
  */
 public interface IUserInfoService extends IService<UserInfo> {
 

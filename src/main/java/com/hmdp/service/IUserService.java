@@ -8,28 +8,18 @@ import com.hmdp.entity.User;
 import javax.servlet.http.HttpSession;
 
 /**
- * <p>
- *  服务类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 定义用户相关业务服务接口。
+ * @author wdk
  */
 public interface IUserService extends IService<User> {
 
     /**
-     * 发送验证码
-     * @param phone
-     * @param session
-     * @return
+     * 生成并发送手机验证码，同时保存验证码状态。
      */
     Result sendCode(String phone, HttpSession session);
 
     /**
-     * 登录
-     * @param loginForm
-     * @param session
-     * @return
+     * 校验登录信息并建立用户登录状态。
      */
     Result login(LoginFormDTO loginForm, HttpSession session);
 }

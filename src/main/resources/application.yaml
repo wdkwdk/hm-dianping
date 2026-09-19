@@ -1,3 +1,4 @@
+# 用途：配置 Spring Boot 服务、数据源及中间件连接参数。作者：wdk。
 server:
   port: 8081
 spring:

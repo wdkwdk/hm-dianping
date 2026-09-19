@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 处理优惠券秒杀下单请求。
+ * @author wdk
  */
 @RestController
 @RequestMapping("/voucher-order")
 public class VoucherOrderController {
+    /**
+     * 接收秒杀请求并创建优惠券订单。
+     */
     @PostMapping("seckill/{id}")
     public Result seckillVoucher(@PathVariable("id") Long voucherId) {
         return Result.fail("功能未完成");

@@ -1,3 +1,4 @@
+-- 用途：初始化点评系统数据库结构和基础数据。作者：wdk。
 /*
  Navicat Premium Data Transfer
 

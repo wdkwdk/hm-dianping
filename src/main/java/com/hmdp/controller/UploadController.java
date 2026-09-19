@@ -12,11 +12,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+/**
+ * 处理图片上传与博客图片删除请求。
+ * @author wdk
+ */
 @Slf4j
 @RestController
 @RequestMapping("upload")
 public class UploadController {
 
+    /**
+     * 上传图片并返回图片访问地址。
+     */
     @PostMapping("blog")
     public Result uploadImage(@RequestParam("file") MultipartFile image) {
         try {
@@ -34,6 +41,9 @@ public class UploadController {
         }
     }
 
+    /**
+     * 删除指定的博客图片文件。
+     */
     @GetMapping("/blog/delete")
     public Result deleteBlogImg(@RequestParam("name") String filename) {
         File file = new File(SystemConstants.IMAGE_UPLOAD_DIR, filename);
@@ -44,6 +54,9 @@ public class UploadController {
         return Result.ok();
     }
 
+    /**
+     * 根据原始文件名生成新的文件名。
+     */
     private String createNewFileName(String originalFilename) {
         // 获取后缀
         String suffix = StrUtil.subAfter(originalFilename, ".", true);

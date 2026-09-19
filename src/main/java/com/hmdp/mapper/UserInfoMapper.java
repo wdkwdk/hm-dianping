@@ -4,12 +4,8 @@ import com.hmdp.entity.UserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-24
+ * 定义用户扩展信息数据访问接口。
+ * @author wdk
  */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 

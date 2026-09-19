@@ -7,14 +7,13 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 定义优惠券数据访问接口。
+ * @author wdk
  */
 public interface VoucherMapper extends BaseMapper<Voucher> {
 
+    /**
+     * 查询指定商铺下的优惠券列表。
+     */
     List<Voucher> queryVoucherOfShop(@Param("shopId") Long shopId);
 }

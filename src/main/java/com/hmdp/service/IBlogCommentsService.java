@@ -4,12 +4,8 @@ import com.hmdp.entity.BlogComments;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- *  服务类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 定义博客评论相关业务服务接口。
+ * @author wdk
  */
 public interface IBlogCommentsService extends IService<BlogComments> {
 

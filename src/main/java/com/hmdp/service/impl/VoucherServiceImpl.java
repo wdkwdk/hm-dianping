@@ -14,12 +14,8 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 实现优惠券相关业务服务。
+ * @author wdk
  */
 @Service
 public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> implements IVoucherService {
@@ -27,6 +23,9 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
     @Resource
     private ISeckillVoucherService seckillVoucherService;
 
+    /**
+     * 查询指定商铺下的优惠券列表。
+     */
     @Override
     public Result queryVoucherOfShop(Long shopId) {
         // 查询优惠券信息
@@ -35,6 +34,9 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
         return Result.ok(vouchers);
     }
 
+    /**
+     * 新增秒杀优惠券及其库存信息。
+     */
     @Override
     @Transactional
     public void addSeckillVoucher(Voucher voucher) {

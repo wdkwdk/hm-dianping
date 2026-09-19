@@ -16,12 +16,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 /**
- * <p>
- * 前端控制器
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 处理用户验证码、登录和用户信息相关的 HTTP 请求。
+ * @author wdk
  */
 @Slf4j
 @RestController
@@ -36,7 +32,7 @@ public class UserController {
 
 
     /**
-     * 发送手机验证码
+     * 生成并发送手机验证码，同时保存验证码状态。
      */
     @PostMapping("code")
     public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {
@@ -45,9 +41,7 @@ public class UserController {
     }
 
     /**
-     * 登录功能
-     *
-     * @param loginForm 登录参数，包含手机号、验证码；或者手机号、密码
+     * 校验登录信息并建立用户登录状态。
      */
     @PostMapping("/login")
     public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session) {
@@ -55,9 +49,7 @@ public class UserController {
     }
 
     /**
-     * 登出功能
-     *
-     * @return 无
+     * 注销当前用户的登录状态。
      */
     @PostMapping("/logout")
     public Result logout() {
@@ -65,12 +57,18 @@ public class UserController {
         return Result.fail("功能未完成");
     }
 
+    /**
+     * 获取当前登录用户的信息。
+     */
     @GetMapping("/me")
     public Result me() {
         UserDTO user = UserHolder.getUser();
         return Result.ok(user);
     }
 
+    /**
+     * 根据用户编号查询用户扩展信息。
+     */
     @GetMapping("/info/{id}")
     public Result info(@PathVariable("id") Long userId) {
         // 查询详情

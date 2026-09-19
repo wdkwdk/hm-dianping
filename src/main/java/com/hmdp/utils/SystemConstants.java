@@ -1,5 +1,9 @@
 package com.hmdp.utils;
 
+/**
+ * 集中定义系统通用常量。
+ * @author wdk
+ */
 public class SystemConstants {
     public static final String IMAGE_UPLOAD_DIR = "D:\\lesson\\nginx-1.18.0\\html\\hmdp\\imgs\\";
     public static final String USER_NICK_NAME_PREFIX = "user_";

@@ -12,12 +12,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * <p>
- * 
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
+ * 定义商铺实体及其持久化字段。
+ * @author wdk
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
