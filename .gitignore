@@ -1,6 +1,7 @@
 # 用途：忽略构建产物、IDE 配置和本地生成文件。作者：wdk。
 HELP.md
 target/
+uploads/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

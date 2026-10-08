@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 
 /**
  * 定义探店博客实体及其持久化字段。
+ *
  * @author wdk
  */
 @Data

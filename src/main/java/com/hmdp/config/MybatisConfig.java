@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 配置 MyBatis-Plus 分页查询拦截器。
+ *
  * @author wdk
  */
 @Configuration

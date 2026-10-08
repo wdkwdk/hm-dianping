@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 
 /**
  * 处理商铺查询与维护相关的 HTTP 请求。
+ *
  * @author wdk
  */
 @RestController
@@ -26,7 +27,8 @@ public class ShopController {
      * 根据商铺编号查询商铺详情。
      */
     @GetMapping("/{id}")
-    public Result queryShopById(@PathVariable("id") Long id) {
+    public Result queryShopById(@PathVariable Long id) {
+
         return shopService.queryById(id);
     }
 

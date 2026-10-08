@@ -27,6 +27,7 @@ import static com.hmdp.utils.SystemConstants.USER_NICK_NAME_PREFIX;
 
 /**
  * 实现用户相关业务服务。
+ *
  * @author wdk
  */
 @Service
@@ -65,7 +66,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         String code = loginForm.getCode();
         String cacheCode = stringRedisTemplate.opsForValue().get(LOGIN_CODE_KEY + loginForm.getPhone());
 //        String cacheCode = session.getAttribute("code").toString();
-        if (cacheCode == null || !code.equals(cacheCode)) {
+        if (!code.equals(cacheCode)) {
             return Result.fail("验证码错误!");
         }
 
@@ -82,6 +83,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
 //        session.setAttribute("user", user);
         return Result.ok(token);
+    }
+
+    /**
+     * 根据id查询用户
+     * @param id
+     * @return
+     */
+    @Override
+    public Result queryUserById(Long id) {
+        User user = getById(id);
+        if (user == null) {
+            return Result.ok();
+        }
+        UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
+        return Result.ok(userDTO);
     }
 
     /**

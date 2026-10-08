@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 封装滚动分页查询的记录和游标信息。
+ *
  * @author wdk
  */
 @Data

@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * 处理商铺类型查询相关的 HTTP 请求。
+ *
  * @author wdk
  */
 @RestController
@@ -20,7 +21,6 @@ import java.util.List;
 public class ShopTypeController {
     @Resource
     private IShopTypeService typeService;
-
 
 
     /**

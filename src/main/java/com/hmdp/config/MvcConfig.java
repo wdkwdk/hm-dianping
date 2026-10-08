@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * 注册登录校验与令牌刷新的 MVC 拦截器。
+ *
  * @author wdk
  */
 @Configuration

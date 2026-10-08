@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * 处理优惠券与秒杀优惠券相关的 HTTP 请求。
+ *
  * @author wdk
  */
 @RestController
@@ -42,6 +43,6 @@ public class VoucherController {
      */
     @GetMapping("/list/{shopId}")
     public Result queryVoucherOfShop(@PathVariable("shopId") Long shopId) {
-       return voucherService.queryVoucherOfShop(shopId);
+        return voucherService.queryVoucherOfShop(shopId);
     }
 }

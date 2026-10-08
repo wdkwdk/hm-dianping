@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 /**
  * 定义用户关注关系实体及其持久化字段。
+ *
  * @author wdk
  */
 @Data

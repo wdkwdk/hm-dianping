@@ -9,7 +9,6 @@ import com.hmdp.service.IUserInfoService;
 import com.hmdp.service.IUserService;
 import com.hmdp.utils.UserHolder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -17,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 处理用户验证码、登录和用户信息相关的 HTTP 请求。
+ *
  * @author wdk
  */
 @Slf4j
@@ -34,7 +34,7 @@ public class UserController {
     /**
      * 生成并发送手机验证码，同时保存验证码状态。
      */
-    @PostMapping("code")
+    @PostMapping("/code")
     public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {
 
         return userService.sendCode(phone, session);
@@ -45,7 +45,7 @@ public class UserController {
      */
     @PostMapping("/login")
     public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session) {
-        return userService.login(loginForm,session);
+        return userService.login(loginForm, session);
     }
 
     /**
@@ -81,5 +81,10 @@ public class UserController {
         info.setUpdateTime(null);
         // 返回
         return Result.ok(info);
+    }
+
+    @GetMapping("/{id}")
+    public Result queryUserById(@PathVariable Long id){
+        return userService.queryUserById(id);
     }
 }

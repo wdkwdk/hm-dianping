@@ -109,7 +109,7 @@ public class CacheClient {
             CACHE_REBUILD_EXECUTOR.submit(() -> {
                 try {
                     T t2 = dbFallBack.apply(id);
-                    setWithLogicalExpire(key, t2, time , unit);
+                    setWithLogicalExpire(key, t2, time, unit);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 } finally {

@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 实现商铺类型相关业务服务。
+ *
  * @author wdk
  */
 @Service

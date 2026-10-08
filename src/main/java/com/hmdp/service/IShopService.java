@@ -6,6 +6,7 @@ import com.hmdp.entity.Shop;
 
 /**
  * 定义商铺相关业务服务接口。
+ *
  * @author wdk
  */
 public interface IShopService extends IService<Shop> {

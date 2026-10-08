@@ -2,6 +2,7 @@ package com.hmdp.utils;
 
 /**
  * 集中定义 Redis 键前缀和缓存有效期常量。
+ *
  * @author wdk
  */
 public class RedisConstants {
@@ -25,4 +26,5 @@ public class RedisConstants {
     public static final String FEED_KEY = "feed:";
     public static final String SHOP_GEO_KEY = "shop:geo:";
     public static final String USER_SIGN_KEY = "sign:";
+    public static final String SECKILL_VOUCHER_KEY = "seckill:stock:";
 }

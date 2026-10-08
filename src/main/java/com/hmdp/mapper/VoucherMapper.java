@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * 定义优惠券数据访问接口。
+ *
  * @author wdk
  */
 public interface VoucherMapper extends BaseMapper<Voucher> {

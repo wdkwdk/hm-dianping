@@ -21,6 +21,7 @@ import static com.hmdp.utils.RedisConstants.LOGIN_USER_TTL;
 
 /**
  * 从令牌恢复当前用户并刷新登录状态有效期。
+ *
  * @author wdk
  */
 @Slf4j
@@ -48,8 +49,10 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
         UserDTO user = BeanUtil.fillBeanWithMap(userMap, new UserDTO(), false);
 
         UserHolder.saveUser(new UserDTO(user.getId(), user.getNickName(), user.getIcon()));
-        //刷新token保存时间
-        stringRedisTemplate.expire(key, LOGIN_USER_TTL, TimeUnit.MINUTES);
+        //刷新token保存时间(admin token 不刷新,方便测试)
+        if (!key.equals("login:token:admin")) {
+            stringRedisTemplate.expire(key, LOGIN_USER_TTL, TimeUnit.MINUTES);
+        }
         return true;
 
 

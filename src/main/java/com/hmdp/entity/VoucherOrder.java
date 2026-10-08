@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 /**
  * 定义优惠券订单实体及其持久化字段。
+ *
  * @author wdk
  */
 @Data

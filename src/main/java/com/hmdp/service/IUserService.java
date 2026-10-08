@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 定义用户相关业务服务接口。
+ *
  * @author wdk
  */
 public interface IUserService extends IService<User> {
@@ -22,4 +23,6 @@ public interface IUserService extends IService<User> {
      * 校验登录信息并建立用户登录状态。
      */
     Result login(LoginFormDTO loginForm, HttpSession session);
+
+    Result queryUserById(Long id);
 }

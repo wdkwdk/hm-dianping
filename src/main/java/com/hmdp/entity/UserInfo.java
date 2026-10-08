@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 
 /**
  * 定义用户扩展信息实体及其持久化字段。
+ *
  * @author wdk
  */
 @Data

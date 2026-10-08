@@ -2,6 +2,7 @@ package com.hmdp.utils;
 
 /**
  * 集中定义手机号和邮箱校验使用的正则表达式。
+ *
  * @author wdk
  */
 public abstract class RegexPatterns {
